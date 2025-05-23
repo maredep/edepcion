@@ -79,27 +79,34 @@
         <p><span class="typed" data-typed-items="Electronics Engineer,Developer,Analyst">Electronics Engineer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-        <script>
-          // Map each role to an image path
-          const imageMap = {
-            "Electronics Engineer": "assets/img/engineer.jpg",
-            "Developer": "assets/img/developer.jpg",
-            "Analyst": "assets/img/report.jpg"
-          };
-
-          // Initialize Typed.js
-          const typed = new Typed(".typed", {
-            strings: ["Electronics Engineer", "Developer", "Analyst"],
-            typeSpeed: 10,
-            backSpeed: 10,
-            loop: true,
-            onStringTyped: function (arrayPos, self) {
-              const role = self.strings[arrayPos];
-              const imagePath = imageMap[role] || "assets/img/engineer.jpg";
-              document.getElementById("hero-image").src = imagePath;
-            }
-          });
+      <script>
+        const imageMap = {
+          "Electronics Engineer": "assets/img/electronics.jpg",
+          "Developer": "assets/img/developer.jpg",
+          "Analyst": "assets/img/analyst.jpg"
+        };
+      
+        const typed = new Typed(".typed", {
+          strings: ["Electronics Engineer", "Developer", "Analyst"],
+          typeSpeed: 50,        // Slower typing speed
+          backSpeed: 30,        // Slower backspacing
+          startDelay: 500,      // Wait before typing starts
+          backDelay: 1500,      // Time before backspacing
+          loop: true,           // Repeat indefinitely
+          showCursor: true,
+          smartBackspace: true, // Only erase what changed
+          onStringTyped: function (arrayPos, self) {
+            const role = self.strings[arrayPos];
+            const imagePath = imageMap[role] || "assets/img/background.jpg";
+            document.getElementById("hero-image").src = imagePath;
+          },
+          preStringTyped: function (arrayPos, self) {
+            // Optional: immediately update image before typing
+            const role = self.strings[arrayPos];
+            const imagePath = imageMap[role] || "assets/img/background.jpg";
+            document.getElementById("hero-image").src = imagePath;
+          }
+        });
       </script>
 
     </section><!-- /Hero Section -->
