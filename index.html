@@ -52,8 +52,8 @@
     </a>
 
     <div class="social-links text-center">
-      <li>Contact No.: 09271179410</li>
-      <li>Email: edepcion.marlon@gmail.com</li>
+      <li style="font-size:25px";>Contact No.: 09271179410</li>
+      <li style="font-size:25px";>Email: edepcion.marlon@gmail.com</li>
     </div>
 
     <nav id="navmenu" class="navmenu">
@@ -72,12 +72,35 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="assets/img/background.jpg" alt="" data-aos="fade-in" class="">
+      <img id="hero-image" src="assets/img/engineer.jpg" alt="" data-aos="fade-in" class="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Marlon Edepcion</h2>
         <p><span class="typed" data-typed-items="Electronics Engineer,Developer,Analyst">Electronics Engineer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script>
+          // Map each role to an image path
+          const imageMap = {
+            "Electronics Engineer": "assets/img/engineer.jpg",
+            "Developer": "assets/img/developer.jpg",
+            "Analyst": "assets/img/report.jpg"
+          };
+
+          // Initialize Typed.js
+          const typed = new Typed(".typed", {
+            strings: ["Electronics Engineer", "Developer", "Analyst"],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: true,
+            onStringTyped: function (arrayPos, self) {
+              const role = self.strings[arrayPos];
+              const imagePath = imageMap[role] || "assets/img/background.jpg";
+              document.getElementById("hero-image").src = imagePath;
+            }
+          });
+      </script>
 
     </section><!-- /Hero Section -->
 
@@ -137,7 +160,6 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
