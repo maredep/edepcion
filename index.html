@@ -81,9 +81,9 @@
 
       <script>
         const imageMap = {
-          "Electronics Engineer": "assets/img/electronics.jpg",
+          "Electronics Engineer": "assets/img/engineer.jpg",
           "Developer": "assets/img/developer.jpg",
-          "Analyst": "assets/img/analyst.jpg"
+          "Analyst": "assets/img/Report.jpg"
         };
       
         const heroImage = document.getElementById("hero-image");
@@ -99,7 +99,7 @@
           smartBackspace: true,
           preStringTyped: function (arrayPos, self) {
             const role = self.strings[arrayPos];
-            const newSrc = imageMap[role] || "assets/img/background.jpg";
+            const newSrc = imageMap[role] || "assets/img/engineer.jpg";
       
             // Smooth image transition
             heroImage.style.opacity = 0;
@@ -142,7 +142,7 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>39</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>m.edepcion@google.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>edepcion.marlon@google.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
