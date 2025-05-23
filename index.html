@@ -73,7 +73,7 @@
     <section id="hero" class="hero section dark-background">
       <img id="hero-image" src="assets/img/electronics.jpg" alt="" data-aos="fade-in">
       <div class="container">
-        <h2>Marlon Edepcion</h2>
+        <h2 id="hero-title">Marlon Edepcion</h2>
         <p><span id="typed-role"></span></p>
       </div>
     </section><!-- /Hero Section -->
@@ -85,6 +85,8 @@
       const heroImage = document.getElementById("hero-image");
 
       const heroText = document.getElementById("typed-role");
+
+      const heroName = document.getElementById("hero-title");
 
       function getImageSrc(name) {
         switch (name) {
@@ -106,7 +108,7 @@
           case "Developer":
             return "#00BFFF"; // deep sky blue
           case "Analyst":
-            return "#32CD32"; // lime green
+            return "#5A5A5A"; // dark grey
           default:
             return "#FFFFFF"; // white
         }
@@ -126,6 +128,7 @@
             heroImage.src = getImageSrc(role);
             heroImage.style.opacity = 1;
             heroText.style.color = getTextColor(role);
+            heroName.style.color = getTextColor(role);
           }, 300);
         }
       });
