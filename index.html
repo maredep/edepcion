@@ -81,9 +81,9 @@
 
       <script>
         const imageMap = {
-          "Electronics Engineer": "assets/img/electronics.jpg",
+          "Electronics Engineer": "assets/img/engineer.jpg",
           "Developer": "assets/img/developer.jpg",
-          "Analyst": "assets/img/analyst.jpg"
+          "Analyst": "assets/img/Report.jpg"
         };
       
         const typed = new Typed(".typed", {
@@ -97,13 +97,13 @@
           smartBackspace: true, // Only erase what changed
           onStringTyped: function (arrayPos, self) {
             const role = self.strings[arrayPos];
-            const imagePath = imageMap[role] || "assets/img/background.jpg";
+            const imagePath = imageMap[role] || "assets/img/engineer.jpg";
             document.getElementById("hero-image").src = imagePath;
           },
           preStringTyped: function (arrayPos, self) {
             // Optional: immediately update image before typing
             const role = self.strings[arrayPos];
-            const imagePath = imageMap[role] || "assets/img/background.jpg";
+            const imagePath = imageMap[role] || "assets/img/engineer.jpg";
             document.getElementById("hero-image").src = imagePath;
           }
         });
