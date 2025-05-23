@@ -122,15 +122,11 @@
         onStringTyped: function (index) {
           const role = stringsArray[index];
           heroImage.style.opacity = 0;
-
-          // Change image
           setTimeout(() => {
             heroImage.src = getImageSrc(role);
             heroImage.style.opacity = 1;
+            heroText.style.color = getTextColor(role);
           }, 300);
-
-          // Change text color
-          heroText.style.color = getTextColor(role);
         }
       });
     </script>
