@@ -226,4 +226,54 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  const stringsArray = ["Electronics Engineer", "Developer", "Analyst"];
+
+  const heroImage = document.getElementById("hero-image");
+
+  function getImageSrc(name) {
+    switch (name) {
+      case "Electronics Engineer":
+        return "assets/img/electronics.jpg";
+      case "Developer":
+        return "assets/img/developer.jpg";
+      case "Analyst":
+        return "assets/img/analyst.jpg";
+      default:
+        return "assets/img/engineer.jpg";
+    }
+  }
+
+  function getTextColor(name) {
+    switch (name) {
+      case "Electronics Engineer":
+        return "#FFD700"; // gold
+      case "Developer":
+        return "#00BFFF"; // deep sky blue
+      case "Analyst":
+        return "#32CD32"; // lime green
+      default:
+        return "#FFFFFF"; // white
+    }
+  }
+
+  const typed = new Typed("#typed-role", {
+    strings: stringsArray,
+    backSpeed: 60,
+    typeSpeed: 60,
+    loop: true,
+    startDelay: 300,
+    backDelay: 2000,
+    onStringTyped: function (index) {
+      const role = stringsArray[index];
+      heroImage.style.opacity = 1;
+      setTimeout(() => {
+        heroImage.src = getImageSrc(role);
+        heroImage.style.opacity = 1;
+      }, 300);
+
+      // Change text color
+      typedText.style.color = getTextColor(role);
+    }
+  });
+
 })();
