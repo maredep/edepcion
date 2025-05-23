@@ -84,6 +84,8 @@
 
       const heroImage = document.getElementById("hero-image");
 
+      const heroText = document.getElementById("typed-role");
+
       function getImageSrc(name) {
         switch (name) {
           case "Electronics Engineer":
@@ -128,7 +130,7 @@
           }, 300);
 
           // Change text color
-          typedText.style.color = getTextColor(role);
+          heroText.style.color = getTextColor(role);
         }
       });
     </script>
