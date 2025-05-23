@@ -81,30 +81,32 @@
 
       <script>
         const imageMap = {
-          "Electronics Engineer": "assets/img/engineer.jpg",
+          "Electronics Engineer": "assets/img/electronics.jpg",
           "Developer": "assets/img/developer.jpg",
-          "Analyst": "assets/img/Report.jpg"
+          "Analyst": "assets/img/analyst.jpg"
         };
+      
+        const heroImage = document.getElementById("hero-image");
       
         const typed = new Typed(".typed", {
           strings: ["Electronics Engineer", "Developer", "Analyst"],
-          typeSpeed: 50,        // Slower typing speed
-          backSpeed: 30,        // Slower backspacing
-          startDelay: 500,      // Wait before typing starts
-          backDelay: 1500,      // Time before backspacing
-          loop: true,           // Repeat indefinitely
+          typeSpeed: 60,
+          backSpeed: 40,
+          startDelay: 500,
+          backDelay: 2000,
+          loop: true,
           showCursor: true,
-          smartBackspace: true, // Only erase what changed
-          onStringTyped: function (arrayPos, self) {
-            const role = self.strings[arrayPos];
-            const imagePath = imageMap[role] || "assets/img/engineer.jpg";
-            document.getElementById("hero-image").src = imagePath;
-          },
+          smartBackspace: true,
           preStringTyped: function (arrayPos, self) {
-            // Optional: immediately update image before typing
             const role = self.strings[arrayPos];
-            const imagePath = imageMap[role] || "assets/img/engineer.jpg";
-            document.getElementById("hero-image").src = imagePath;
+            const newSrc = imageMap[role] || "assets/img/background.jpg";
+      
+            // Smooth image transition
+            heroImage.style.opacity = 0;
+            setTimeout(() => {
+              heroImage.src = newSrc;
+              heroImage.style.opacity = 1;
+            }, 300);
           }
         });
       </script>
